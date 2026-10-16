@@ -1,0 +1,2064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VITLS – Vitamin Drinks</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+<div class="phone">
+
+    <!-- HEADER -->
+
+    <header>
+        <div class="logo">VITLS</div>
+
+        <a
+            href="https://vitls-website.onrender.com/"
+            class="profile-button website-button"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit VITLS website"
+            title="Visit VITLS website"
+        >
+            🌐
+        </a>
+        
+    </header>
+
+
+    <!-- HOME -->
+
+    <main id="homePage">
+
+        <section class="hero">
+
+            <p class="eyebrow">
+                MADE FOR YOUR DAY
+            </p>
+
+            <h1>
+                Your vitamins.<br>
+                Your flavor.<br>
+                Your way.
+            </h1>
+
+            <p class="subtitle">
+                Create a vitamin drink that fits your day.
+                Choose your vitamins, flavor and design.
+            </p>
+
+        </section>
+
+
+        <!-- MAIN ACTIONS -->
+
+        <section class="actions">
+
+            <button
+                class="main-card primary"
+                onclick="startQuiz()"
+            >
+                <div>
+                    <strong>Help me choose</strong>
+                    <span>
+                        A simple guide to your main vitamins
+                    </span>
+                </div>
+
+                <span class="arrow">→</span>
+            </button>
+
+
+            <button
+                class="main-card"
+                onclick="startBuilder()"
+            >
+                <div>
+                    <strong>Create my drink</strong>
+                    <span>
+                        Choose vitamins, amount and flavor
+                    </span>
+                </div>
+
+                <span class="plus">＋</span>
+            </button>
+
+        </section>
+
+        <!-- FAVORITE DRINK -->
+
+        <section class="favorite-section">
+
+            <p class="eyebrow">
+                YOUR FAVORITE
+            </p>
+
+            <button
+                id="favoriteDrinkCard"
+                class="favorite-card empty"
+                onclick="openFavoriteDrink()"
+            >
+
+                <div
+                    id="favoriteIcon"
+                    class="favorite-icon"
+                >
+                    ♡
+                </div>
+
+                <div class="favorite-info">
+
+                    <strong id="favoriteTitle">
+                        No favorite drink yet
+                    </strong>
+
+                    <span id="favoriteDescription">
+                        Create a drink and save it as your favorite
+                    </span>
+
+                </div>
+
+                <span class="favorite-arrow">
+                    →
+                </span>
+
+            </button>
+
+        </section>
+
+
+        <!-- VITAMINS -->
+
+        <section class="vitamin-section">
+
+            <div class="section-header">
+
+                <div>
+                    <p class="eyebrow">
+                        THE ESSENTIALS
+                    </p>
+
+                    <h2>
+                        Meet the main four
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="vitamin-explorer">
+
+                <!-- LEFT BUTTONS -->
+
+                <div class="vitamin-tabs">
+
+                    <button
+                        class="vitamin-tab active"
+                        onclick="showVitaminInfo('C', this)"
+                    >
+                        C
+                    </button>
+
+                    <button
+                        class="vitamin-tab"
+                        onclick="showVitaminInfo('D', this)"
+                    >
+                        D
+                    </button>
+
+                    <button
+                        class="vitamin-tab"
+                        onclick="showVitaminInfo('B12', this)"
+                    >
+                        B12
+                    </button>
+
+                    <button
+                        class="vitamin-tab"
+                        onclick="showVitaminInfo('Mg', this)"
+                    >
+                        Mg
+                    </button>
+
+                </div>
+
+
+                <!-- INFO CARD -->
+
+                <div class="vitamin-info-card">
+
+                    <div class="vitamin-info-top">
+
+                        <div
+                            id="vitaminInfoIcon"
+                            class="vitamin-info-icon"
+                        >
+                            C
+                        </div>
+
+                        <div>
+                            <p class="vitamin-type">
+                                ESSENTIAL NUTRIENT
+                            </p>
+
+                            <h3 id="vitaminInfoName">
+                                Vitamin C
+                            </h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="vitamin-info-block">
+
+                        <strong>
+                            What does it do?
+                        </strong>
+
+                        <p id="vitaminInfoBenefit">
+                            Supports normal immune function
+                            and contributes to normal collagen
+                            formation.
+                        </p>
+
+                    </div>
+
+
+                    <div class="vitamin-info-block">
+
+                        <strong>
+                            When intake is too low
+                        </strong>
+
+                        <p id="vitaminInfoLow">
+                            Severe deficiency can cause fatigue,
+                            weakness and eventually scurvy.
+                        </p>
+
+                    </div>
+
+
+                    <div class="vitamin-info-block">
+
+                        <strong>
+                            Where can you find it?
+                        </strong>
+
+                        <p id="vitaminInfoSources">
+                            Citrus fruits, peppers, strawberries
+                            and broccoli.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+            <!-- SOCIAL MEDIA -->
+
+        <section class="social-section">
+
+            <p class="eyebrow">STAY CONNECTED</p>
+
+            <h2>Follow VITLS.</h2>
+
+            <p class="social-description">
+                Fresh flavors, new ideas and a little daily inspiration.
+                Follow us and stay in the mix.
+            </p>
+
+            <div class="social-links">
+
+                <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link"
+                    aria-label="Instagram"
+                >
+                    <img
+                        src="https://cdn.simpleicons.org/instagram"
+                        alt="Instagram"
+                    >
+                </a>
+
+                <a
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link"
+                    aria-label="Facebook"
+                >
+                    <img
+                        src="https://cdn.simpleicons.org/facebook"
+                        alt="Facebook"
+                    >
+                </a>
+
+                <a
+                    href="https://www.tiktok.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link"
+                    aria-label="TikTok"
+                >
+                    <img
+                        src="https://cdn.simpleicons.org/tiktok"
+                        alt="TikTok"
+                    >
+                </a>
+
+                <a
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link"
+                    aria-label="YouTube"
+                >
+                    <img
+                        src="https://cdn.simpleicons.org/youtube"
+                        alt="YouTube"
+                    >
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- QUIZ PAGE -->
+
+<main id="quizPage" class="hidden">
+
+    <button
+        class="back-button"
+        onclick="quizBack()"
+    >
+        ← Back
+    </button>
+
+    <div class="progress">
+        <div id="quizProgress1"></div>
+        <div id="quizProgress2"></div>
+        <div id="quizProgress3"></div>
+        <div id="quizProgress4"></div>
+    </div>
+
+    <p class="step" id="quizStep">
+        QUESTION 1 OF 4
+    </p>
+
+    <h1 id="quizQuestion">
+        What does your typical day look like?
+    </h1>
+
+    <p class="subtitle" id="quizSubtitle">
+        Pick the option that feels most like you.
+    </p>
+
+    <div
+        class="quiz-options"
+        id="quizOptions"
+    >
+    </div>
+
+</main>
+
+    <!-- CREATE MY DRINK - VITAMINS -->
+
+<main id="builderPage" class="hidden">
+
+    <button class="back-button" onclick="goHome()">
+        ← Back
+    </button>
+
+    <div class="progress">
+        <div class="progress-active"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <p class="step">
+        STEP 1 OF 5
+    </p>
+
+    <h1>
+        Choose your vitamins
+    </h1>
+
+    <p class="subtitle">
+        Select the vitamins and minerals you want
+        to include in your custom drink.
+    </p>
+
+
+    <div class="choice-list">
+
+        <button
+            class="choice vitamin-choice"
+            data-vitamin="Vitamin C"
+            onclick="toggleVitamin(this)"
+        >
+            <span class="vitamin-small-icon">C</span>
+
+            <span class="choice-info">
+                <strong>Vitamin C</strong>
+                <small>Vitamin</small>
+            </span>
+
+            <span class="check">✓</span>
+        </button>
+
+
+        <button
+            class="choice vitamin-choice"
+            data-vitamin="Vitamin D"
+            onclick="toggleVitamin(this)"
+        >
+            <span class="vitamin-small-icon">D</span>
+
+            <span class="choice-info">
+                <strong>Vitamin D</strong>
+                <small>Vitamin</small>
+            </span>
+
+            <span class="check">✓</span>
+        </button>
+
+
+        <button
+            class="choice vitamin-choice"
+            data-vitamin="Vitamin B12"
+            onclick="toggleVitamin(this)"
+        >
+            <span class="vitamin-small-icon">B12</span>
+
+            <span class="choice-info">
+                <strong>Vitamin B12</strong>
+                <small>B vitamin</small>
+            </span>
+
+            <span class="check">✓</span>
+        </button>
+
+
+        <button
+            class="choice vitamin-choice"
+            data-vitamin="Magnesium"
+            onclick="toggleVitamin(this)"
+        >
+            <span class="vitamin-small-icon">Mg</span>
+
+            <span class="choice-info">
+                <strong>Magnesium</strong>
+                <small>Mineral</small>
+            </span>
+
+            <span class="check">✓</span>
+        </button>
+
+    </div>
+
+
+    <p id="vitaminMessage" class="selection-message">
+        Choose at least one.
+    </p>
+
+
+    <button
+        class="continue-button"
+        onclick="goToAmount()"
+    >
+        Continue →
+    </button>
+
+</main>
+
+
+<!-- AMOUNT PAGE -->
+
+<main id="amountPage" class="hidden">
+
+    <button
+        class="back-button"
+        onclick="backToVitamins()"
+    >
+        ← Back
+    </button>
+
+
+    <div class="progress">
+        <div class="progress-active"></div>
+        <div class="progress-active"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+
+    <p class="step">
+        STEP 2 OF 5
+    </p>
+
+    <h1>
+        Choose your blend
+    </h1>
+
+    <p class="subtitle">
+        Choose how you want your selected ingredients
+        represented in this prototype.
+    </p>
+
+
+   <div
+    id="individualAmounts"
+    class="individual-amounts"
+    >
+    </div>
+
+
+    <div class="your-selection">
+
+        <p class="eyebrow">
+            YOUR SELECTION
+        </p>
+
+        <div id="selectedVitaminSummary">
+        </div>
+
+    </div>
+
+
+    <button
+        class="continue-button"
+        onclick="goToFlavor()"
+    >
+        Choose flavor →
+    </button>
+
+</main>
+
+
+    <!-- FLAVOR -->
+
+    <main id="flavorPage" class="hidden">
+
+        <button
+            class="back-button"
+            onclick="backToBuilder()"
+        >
+            ← Back
+        </button>
+
+
+        <div class="progress">
+
+            <div class="progress-active"></div>
+            <div class="progress-active"></div>
+            <div></div>
+            <div></div>
+
+        </div>
+
+
+        <p class="step">
+            STEP 2 OF 4
+        </p>
+
+        <h1>
+            Pick your flavor
+        </h1>
+
+        <p class="subtitle">
+            Choose the flavor for your custom drink.
+        </p>
+
+
+        <div class="flavors">
+
+            <button
+                class="flavor mango"
+                onclick="selectFlavor(this, 'Tropical Mango')"
+            >
+                🥭
+
+                <strong>
+                    Tropical Mango
+                </strong>
+            </button>
+
+
+            <button
+                class="flavor berry"
+                onclick="selectFlavor(this, 'Berry Rush')"
+            >
+                🍓
+
+                <strong>
+                    Berry Rush
+                </strong>
+            </button>
+
+
+            <button
+                class="flavor citrus"
+                onclick="selectFlavor(this, 'Citrus Fresh')"
+            >
+                🍋
+
+                <strong>
+                    Citrus Fresh
+                </strong>
+            </button>
+
+
+            <button
+                class="flavor blue"
+                onclick="selectFlavor(this, 'Blue Fusion')"
+            >
+                🫐
+
+                <strong>
+                    Blue Fusion
+                </strong>
+            </button>
+
+        </div>
+
+
+        <button
+            class="continue-button"
+            onclick="goToCustomize()"
+        >
+            Customize my can →
+        </button>
+
+    </main>
+
+<!-- CHOOSE CAN -->
+
+<main id="chooseCanPage" class="hidden">
+
+    <button
+        class="back-button"
+        onclick="backToFlavor()"
+    >
+        ← Back
+    </button>
+
+    <div class="progress">
+        <div class="progress-active"></div>
+        <div class="progress-active"></div>
+        <div class="progress-active"></div>
+        <div class="progress-active"></div>
+        <div></div>
+    </div>
+
+    <p class="step">
+        STEP 4 OF 5
+    </p>
+
+    <h1>Choose your can</h1>
+
+    <p class="subtitle">
+        Keep the original VITLS design
+        or make the can your own.
+    </p>
+
+
+    <div class="can-choice-list">
+
+        <button
+            class="can-choice-card"
+            onclick="chooseClassicCan()"
+        >
+            <div class="can-choice-icon">
+                🥤
+            </div>
+
+            <div>
+                <strong>Classic can</strong>
+                <small>
+                    Original VITLS design based on your flavor
+                </small>
+            </div>
+
+            <span>→</span>
+        </button>
+
+
+        <button
+            class="can-choice-card"
+            onclick="chooseCustomCan()"
+        >
+            <div class="can-choice-icon">
+                ✨
+            </div>
+
+            <div>
+                <strong>Customize my can</strong>
+                <small>
+                    Choose your color, text and sticker
+                </small>
+            </div>
+
+            <span>→</span>
+        </button>
+
+    </div>
+
+</main>
+
+    <!-- CUSTOMIZE CAN -->
+
+<main id="customizePage" class="hidden">
+
+    <button
+        class="back-button"
+        onclick="backToChooseCan()"
+    >
+        ← Back
+    </button>
+
+    <div class="progress">
+        <div class="progress-active"></div>
+        <div class="progress-active"></div>
+        <div class="progress-active"></div>
+        <div class="progress-active"></div>
+        <div></div>
+    </div>
+
+    <p class="step">
+        STEP 4 OF 5
+    </p>
+
+    <h1>
+        Make it yours.
+    </h1>
+
+    <p class="subtitle">
+        Customize your can with a color,
+        name and sticker.
+    </p>
+
+
+    <!-- LIVE CAN PREVIEW -->
+
+    <div class="customize-can-area">
+
+        <div id="customCan" class="can">
+
+            <div class="can-top"></div>
+
+            <div
+                id="customCanSticker"
+                class="custom-can-sticker"
+            >
+                ✨
+            </div>
+
+            <div class="can-logo">
+                VITLS
+            </div>
+
+            <div
+                id="customCanText"
+                class="custom-can-text"
+            >
+                YOUR NAME
+            </div>
+
+            <div
+                id="customCanFlavor"
+                class="can-flavor"
+            >
+                YOUR FLAVOR
+            </div>
+
+            <div class="can-bottom">
+                VITAMIN DRINK
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- COLOR -->
+
+    <div class="custom-section">
+
+        <p class="custom-label">
+            CAN COLOR
+        </p>
+
+        <div class="color-options">
+
+            <button
+                class="color-button color-peach"
+                onclick="changeCanColor('#f4bd68', this)"
+            ></button>
+
+            <button
+                class="color-button color-pink"
+                onclick="changeCanColor('#e89aa8', this)"
+            ></button>
+
+            <button
+                class="color-button color-green"
+                onclick="changeCanColor('#b9cf8a', this)"
+            ></button>
+
+            <button
+                class="color-button color-blue"
+                onclick="changeCanColor('#8fb9db', this)"
+            ></button>
+
+            <button
+                class="color-button color-purple"
+                onclick="changeCanColor('#b9a7d8', this)"
+            ></button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CUSTOM TEXT -->
+
+    <div class="custom-section">
+
+        <label
+            class="custom-label"
+            for="canTextInput"
+        >
+            YOUR TEXT
+        </label>
+
+        <input
+            id="canTextInput"
+            class="custom-input"
+            type="text"
+            maxlength="14"
+            placeholder="e.g. EMMA"
+            oninput="updateCanText(this.value)"
+        >
+
+        <small class="input-hint">
+            Maximum 14 characters
+        </small>
+
+    </div>
+
+
+    <!-- STICKER -->
+
+    <div class="custom-section">
+
+        <p class="custom-label">
+            CHOOSE A STICKER
+        </p>
+
+        <div class="sticker-options">
+
+            <button onclick="selectSticker('✨', this)">
+                ✨
+            </button>
+
+            <button onclick="selectSticker('⭐', this)">
+                ⭐
+            </button>
+
+            <button onclick="selectSticker('⚡', this)">
+                ⚡
+            </button>
+
+            <button onclick="selectSticker('💗', this)">
+                💗
+            </button>
+
+            <button onclick="selectSticker('🌈', this)">
+                🌈
+            </button>
+
+            <button onclick="selectSticker('🔥', this)">
+                🔥
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="continue-button"
+        onclick="finishCustomization()"
+    >
+        Review my drink →
+    </button>
+
+</main>
+
+    <!-- RESULT -->
+
+    <main id="resultPage" class="hidden">
+
+        <button
+            class="back-button"
+            onclick="backFromResult()"
+        >
+            ← Back
+        </button>
+
+
+        <p class="eyebrow">
+            YOUR CUSTOM DRINK
+        </p>
+
+        <h1>
+            Made for you.
+        </h1>
+
+
+        <div class="can-area">
+
+            <div id="drinkCan" class="can">
+
+                <div class="can-top"></div>
+
+                <div
+            id="resultCanSticker"
+            class="custom-can-sticker"
+        ></div>
+
+            <div class="can-logo">
+                VITLS
+            </div>
+
+            <div
+                id="resultCanText"
+                class="custom-can-text"
+            ></div>
+
+            <div
+                id="canFlavor"
+                class="can-flavor"
+            >
+                YOUR FLAVOR
+            </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="drink-summary">
+
+    <p class="eyebrow">
+        YOUR DRINK
+    </p>
+
+    <div class="summary-row">
+        <span>Flavor</span>
+
+        <strong id="resultFlavor">
+            Not selected
+        </strong>
+    </div>
+
+
+    <div class="summary-divider"></div>
+
+
+    <div class="summary-title">
+        Vitamins
+    </div>
+
+    <div id="resultVitamins"></div>
+
+
+    <div class="summary-divider"></div>
+
+
+    <div class="summary-row">
+        <span>Can</span>
+
+        <strong id="resultCanType">
+            Classic design
+        </strong>
+    </div>
+
+    </div>
+    
+    <div class="product-quantity">
+
+    <div>
+        <p class="eyebrow">
+            QUANTITY
+        </p>
+
+        <span class="quantity-hint">
+            How many cans?
+        </span>
+    </div>
+
+
+    <div class="quantity-selector">
+
+        <button onclick="decreaseCustomQuantity()">
+            −
+        </button>
+
+        <strong id="customDrinkQuantity">
+            1
+        </strong>
+
+        <button onclick="increaseCustomQuantity()">
+            +
+        </button>
+
+    </div>
+
+</div>
+
+        <button
+            class="continue-button"
+            onclick="addCustomDrinkToCart()"
+        >
+            Add <span id="addCustomQuantity">1</span> to Cart
+        </button>
+
+
+        <button
+            class="secondary-button"
+            onclick="startBuilder()"
+        >
+            Create another
+        </button>
+
+    </main>
+
+    <!-- PRODUCT DETAIL -->
+
+    <main id="productPage" class="hidden">
+
+        <button
+            class="back-button"
+            onclick="goHome()"
+        >
+            ← Back
+        </button>
+
+        <p class="eyebrow">
+            BESTSELLER
+        </p>
+
+        <h1>Berry Rush</h1>
+
+        <p class="subtitle">
+            A fruity vitamin drink with a bold berry flavor.
+        </p>
+
+
+        <div class="product-can-area">
+
+            <div class="can bestseller-can">
+
+                <div class="can-top"></div>
+
+                <div class="can-logo">
+                    VITLS
+                </div>
+
+                <div class="can-flavor">
+                    BERRY RUSH
+                </div>
+
+                <div class="can-bottom">
+                    VITAMIN DRINK
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-info-card">
+
+            <div class="product-info-row">
+                <span>Flavor</span>
+                <strong>Berry Rush</strong>
+            </div>
+
+            <div class="product-info-row">
+                <span>Design</span>
+                <strong>Classic can</strong>
+            </div>
+
+            <div class="product-info-row">
+                <span>Size</span>
+                <strong>330 ml</strong>
+            </div>
+
+            </div>
+
+            <div class="product-quantity">
+
+        <div>
+            <p class="eyebrow">
+                QUANTITY
+            </p>
+
+            <span class="quantity-hint">
+                How many cans?
+            </span>
+        </div>
+
+
+        <div class="quantity-selector">
+
+            <button onclick="decreaseProductQuantity()">
+                −
+            </button>
+
+            <strong id="productQuantity">
+                1
+            </strong>
+
+            <button onclick="increaseProductQuantity()">
+                +
+            </button>
+
+        </div>
+
+    </div>
+
+        <button
+        class="continue-button"
+        onclick="addBestsellerToCart()"
+        >
+            Add <span id="addToCartQuantity">1</span> to cart
+        </button>
+    
+
+    </main>
+
+    <!-- SHOP PAGE -->
+
+    <main id="shopPage" class="hidden">
+
+        <p class="eyebrow">SHOP VITLS</p>
+
+        <h1>Find your flavor.</h1>
+
+        <p class="subtitle">
+            Pick a classic or create something completely yours.
+        </p>
+
+
+        <div class="shop-grid">
+
+            <!-- TROPICAL MANGO -->
+
+            <button
+                class="shop-card"
+                onclick="openShopProduct('Tropical Mango')"
+            >
+                <div class="shop-can mango">
+                    <strong>VITLS</strong>
+                    <small>TROPICAL MANGO</small>
+                </div>
+
+                <div class="shop-card-info">
+                    <strong>Tropical Mango</strong>
+                    <span>Bright & tropical</span>
+                </div>
+            </button>
+
+
+            <!-- BERRY RUSH -->
+
+            <button
+                class="shop-card"
+                onclick="openShopProduct('Berry Rush')"
+            >
+                <div class="shop-can berry">
+                    <strong>VITLS</strong>
+                    <small>BERRY RUSH</small>
+                </div>
+
+                <div class="shop-card-info">
+                    <strong>Berry Rush</strong>
+                    <span>Bold & fruity</span>
+                </div>
+            </button>
+
+
+            <!-- CITRUS FRESH -->
+
+            <button
+                class="shop-card"
+                onclick="openShopProduct('Citrus Fresh')"
+            >
+                <div class="shop-can citrus">
+                    <strong>VITLS</strong>
+                    <small>CITRUS FRESH</small>
+                </div>
+
+                <div class="shop-card-info">
+                    <strong>Citrus Fresh</strong>
+                    <span>Light & refreshing</span>
+                </div>
+            </button>
+
+
+            <!-- BLUE FUSION -->
+
+            <button
+                class="shop-card"
+                onclick="openShopProduct('Blue Fusion')"
+            >
+                <div class="shop-can blue">
+                    <strong>VITLS</strong>
+                    <small>BLUE FUSION</small>
+                </div>
+
+                <div class="shop-card-info">
+                    <strong>Blue Fusion</strong>
+                    <span>Smooth & fresh</span>
+                </div>
+            </button>
+
+        </div>
+
+    </main>
+
+    <!-- SHOP PRODUCT DETAIL -->
+
+    <main id="shopProductPage" class="hidden">
+
+        <button
+            class="back-button"
+            onclick="openShop()"
+        >
+            ← Back to Shop
+        </button>
+
+        <p class="eyebrow">VITLS CLASSIC</p>
+
+        <h1 id="shopProductTitle">
+            Citrus Fresh
+        </h1>
+
+        <p
+            id="shopProductDescription"
+            class="subtitle"
+        >
+            Light & refreshing
+        </p>
+
+
+        <div class="product-can-area">
+
+            <div
+                id="shopProductCan"
+                class="can"
+            >
+                <div class="can-top"></div>
+
+                <div class="can-logo">
+                    VITLS
+                </div>
+
+                <div
+                    id="shopProductCanFlavor"
+                    class="can-flavor"
+                >
+                    CITRUS FRESH
+                </div>
+
+                <div class="can-bottom">
+                    VITAMIN DRINK
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="product-info-card">
+
+            <div class="product-info-row">
+                <span>Flavor</span>
+                <strong id="shopProductFlavor">
+                    Citrus Fresh
+                </strong>
+            </div>
+
+            <div class="product-info-row">
+                <span>Design</span>
+                <strong>Classic can</strong>
+            </div>
+
+            <div class="product-info-row">
+                <span>Size</span>
+                <strong>330 ml</strong>
+            </div>
+
+        </div>
+
+
+        <div class="product-quantity">
+
+            <div>
+                <p class="eyebrow">
+                    QUANTITY
+                </p>
+
+                <span class="quantity-hint">
+                    How many cans?
+                </span>
+            </div>
+
+            <div class="quantity-selector">
+
+                <button onclick="decreaseShopQuantity()">
+                    −
+                </button>
+
+                <strong id="shopProductQuantity">
+                    1
+                </strong>
+
+                <button onclick="increaseShopQuantity()">
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="continue-button"
+            onclick="addShopProductToCart()"
+        >
+            Add
+            <span id="shopAddQuantity">1</span>
+            to Cart
+        </button>
+
+    </main>
+
+    <!-- REGISTER PAGE -->
+
+    <main id="registerPage" class="hidden">
+
+        <button
+            class="back-button"
+            onclick="openProfile()"
+        >
+            ← Back
+        </button>
+
+        <p class="eyebrow">JOIN VITLS</p>
+
+        <h1>Create your account</h1>
+
+        <p class="subtitle">
+            Save your drinks, collect points
+            and enjoy faster checkout.
+        </p>
+
+
+        <form
+            id="registerForm"
+            onsubmit="createAccount(event)"
+        >
+
+            <div class="form-group">
+                <label for="registerFirstName">
+                    First name
+                </label>
+
+                <input
+                    id="registerFirstName"
+                    type="text"
+                    placeholder="Emma"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="registerLastName">
+                    Last name
+                </label>
+
+                <input
+                    id="registerLastName"
+                    type="text"
+                    placeholder="Smith"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="registerEmail">
+                    Email address
+                </label>
+
+                <input
+                    id="registerEmail"
+                    type="email"
+                    placeholder="emma@email.com"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="registerPassword">
+                    Password
+                </label>
+
+                <input
+                    id="registerPassword"
+                    type="password"
+                    placeholder="Create a password"
+                    minlength="6"
+                    required
+                >
+
+                <small>
+                    At least 6 characters
+                </small>
+            </div>
+
+
+            <div class="address-section">
+
+                <div class="address-heading">
+
+                    <div>
+                        <p class="eyebrow">
+                            DELIVERY
+                        </p>
+
+                        <h3>
+                            Save your address
+                        </h3>
+                    </div>
+
+                    <span class="optional-label">
+                        Optional
+                    </span>
+
+                </div>
+
+                <p class="address-description">
+                    Save it now and we'll have it ready
+                    for a faster checkout.
+                </p>
+
+
+                <div class="form-group">
+                    <label for="registerStreet">
+                        Street & house number
+                    </label>
+
+                    <input
+                        id="registerStreet"
+                        type="text"
+                        placeholder="Main Street 12"
+                    >
+                </div>
+
+
+                <div class="address-row">
+
+                    <div class="form-group">
+                        <label for="registerCity">
+                            City
+                        </label>
+
+                        <input
+                            id="registerCity"
+                            type="text"
+                            placeholder="Bratislava"
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="registerZip">
+                            ZIP code
+                        </label>
+
+                        <input
+                            id="registerZip"
+                            type="text"
+                            placeholder="811 01"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="registerCountry">
+                        Country
+                    </label>
+
+                    <input
+                        id="registerCountry"
+                        type="text"
+                        placeholder="Slovakia"
+                    >
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="continue-button"
+            >
+                Create my account →
+            </button>
+
+        </form>
+
+    </main>
+
+
+    <!-- PROFILE / YOU PAGE -->
+
+    <main id="profilePage" class="hidden">
+
+
+        <!-- LOGGED IN PROFILE -->
+
+        <div id="loggedInProfile" class="hidden">
+
+            <div class="logged-profile-header">
+
+                <div class="profile-main-icon">
+                    ♙
+                </div>
+
+                <p class="eyebrow">
+                    MY PROFILE
+                </p>
+
+                <h1>
+                    Hi, <span id="profileFirstName">there</span>!
+                </h1>
+
+                <p
+                    id="profileEmail"
+                    class="subtitle"
+                >
+                    email@email.com
+                </p>
+
+            </div>
+
+
+            <!-- REWARDS -->
+
+            <div class="rewards-card">
+
+                <div class="rewards-top">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            VITLS REWARDS
+                        </p>
+
+                        <span class="rewards-label">
+                            Your balance
+                        </span>
+
+                    </div>
+
+
+                    <div class="points-balance">
+
+                        <strong id="profilePoints">
+                            0
+                        </strong>
+
+                        <span>
+                            points
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="points-progress">
+
+                    <div
+                        id="pointsProgressBar"
+                        class="points-progress-bar"
+                    ></div>
+
+                </div>
+
+
+                <p
+                    id="pointsProgressText"
+                    class="points-progress-text"
+                >
+                    Start shopping to collect points.
+                </p>
+
+
+                <button
+                    class="rewards-button"
+                    onclick="openRewards()"
+                >
+                    View rewards →
+                </button>
+
+            </div>
+
+
+            <!-- PROFILE MENU -->
+
+            <div class="profile-menu">
+
+
+                <!-- ORDER HISTORY -->
+
+                <button onclick="openOrderHistory()">
+
+                    <span class="profile-menu-icon">
+                        ▢
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Order history
+                        </strong>
+
+                        <small>
+                            View your previous orders
+                        </small>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- DELIVERY ADDRESS -->
+
+                <button onclick="openSavedAddress()">
+
+                    <span class="profile-menu-icon">
+                        ⌂
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Delivery address
+                        </strong>
+
+                        <small id="profileAddressPreview">
+                            No address saved
+                        </small>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- ACCOUNT DETAILS -->
+
+                <button onclick="openAccountDetails()">
+
+                    <span class="profile-menu-icon">
+                        ⚙
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Account details
+                        </strong>
+
+                        <small>
+                            Name, email and password
+                        </small>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- LOG OUT -->
+
+            <button
+                class="logout-button"
+                onclick="logout()"
+            >
+                Log out
+            </button>
+
+        </div>
+
+
+
+        <!-- LOGGED OUT PROFILE -->
+
+        <div id="loggedOutProfile">
+
+            <div class="profile-welcome">
+
+                <div class="profile-main-icon">
+                    ♙
+                </div>
+
+                <p class="eyebrow">
+                    YOUR VITLS
+                </p>
+
+                <h1>
+                    Welcome to VITLS
+                </h1>
+
+                <p class="subtitle">
+                    Save your drinks, collect rewards
+                    and make checkout faster.
+                </p>
+
+            </div>
+
+
+            <div class="profile-actions">
+
+
+                <!-- CREATE ACCOUNT -->
+
+                <button
+                    class="profile-action-card"
+                    onclick="openRegister()"
+                >
+
+                    <div class="profile-action-icon">
+                        ♙
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Create an account
+                        </strong>
+
+                        <span>
+                            Join VITLS and start collecting points
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-action-arrow">
+                        →
+                    </div>
+
+                </button>
+
+
+                <!-- LOG IN -->
+
+                <button
+                    class="profile-action-card"
+                    onclick="openLogin()"
+                >
+
+                    <div class="profile-action-icon">
+                        →
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Log in
+                        </strong>
+
+                        <span>
+                            Already have a VITLS account?
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-action-arrow">
+                        →
+                    </div>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- DELIVERY ADDRESS PAGE -->
+
+<main id="addressPage" class="hidden">
+
+    <button class="back-button" onclick="openProfile()">
+        ← Back to Profile
+    </button>
+
+    <p class="eyebrow">MY ACCOUNT</p>
+
+    <h1>Delivery address</h1>
+
+    <p class="subtitle">
+        View or update your saved delivery address.
+    </p>
+
+    <form onsubmit="saveDeliveryAddress(event)">
+
+        <div class="form-group">
+            <label for="addressStreet">Street & house number</label>
+            <input id="addressStreet" type="text" placeholder="Main Street 12">
+        </div>
+
+        <div class="form-group">
+            <label for="addressCity">City</label>
+            <input id="addressCity" type="text" placeholder="Bratislava">
+        </div>
+
+        <div class="form-group">
+            <label for="addressZip">ZIP code</label>
+            <input id="addressZip" type="text" placeholder="811 01">
+        </div>
+
+        <div class="form-group">
+            <label for="addressCountry">Country</label>
+            <input id="addressCountry" type="text" placeholder="Slovakia">
+        </div>
+
+        <button type="submit" class="continue-button">
+            Save address →
+        </button>
+
+    </form>
+
+</main>
+
+
+    <!-- ACCOUNT DETAILS PAGE -->
+
+    <main id="accountDetailsPage" class="hidden">
+
+        <button class="back-button" onclick="openProfile()">
+            ← Back to Profile
+        </button>
+
+        <p class="eyebrow">MY ACCOUNT</p>
+
+        <h1>Account details</h1>
+
+        <p class="subtitle">
+            View and update your personal information.
+        </p>
+
+        <form onsubmit="saveAccountDetails(event)">
+
+            <div class="form-group">
+                <label for="accountFirstName">First name</label>
+                <input id="accountFirstName" type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label for="accountLastName">Last name</label>
+                <input id="accountLastName" type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label for="accountEmail">Email address</label>
+                <input id="accountEmail" type="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="accountNewPassword">New password</label>
+                <input
+                    id="accountNewPassword"
+                    type="password"
+                    minlength="6"
+                    placeholder="Leave empty to keep current password"
+                >
+                <small>Only fill this in if you want to change your password.</small>
+            </div>
+
+            <button type="submit" class="continue-button">
+                Save changes →
+            </button>
+
+        </form>
+
+    </main>
+
+    <!-- CART PAGE -->
+
+    <main id="cartPage" class="hidden">
+
+        <button
+            class="back-button"
+            onclick="goHome()"
+        >
+            ← Back
+        </button>
+
+        <p class="eyebrow">
+            YOUR ORDER
+        </p>
+
+        <h1>Your Cart</h1>
+
+        <p class="subtitle">
+            Review everything in your order.
+        </p>
+
+
+        <div
+            id="emptyCart"
+            class="empty-cart"
+        >
+            <div class="empty-cart-icon">
+                🛒
+            </div>
+
+            <strong>Your cart is empty</strong>
+
+            <p>
+                Create your first drink or choose
+                something from the shop.
+            </p>
+        </div>
+
+
+        <div id="cartItems"></div>
+
+
+        <div
+            id="cartSummary"
+            class="cart-summary hidden"
+        >
+
+            <div class="cart-total-row">
+
+                <span>Total cans</span>
+
+                <strong id="cartTotalCans">
+                    0
+                </strong>
+
+            </div>
+
+            <button
+                class="continue-button"
+                onclick="checkout()"
+            >
+                Continue to checkout →
+            </button>
+
+        </div>
+
+    </main>
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <nav>
+
+        <button onclick="goHome()">
+            <span>⌂</span>
+            Home
+        </button>
+
+        <button onclick="openShop()">
+            <span>⌕</span>
+            Shop
+        </button>
+
+        <button
+            class="create-nav"
+            onclick="startBuilder()"
+        >
+            +
+        </button>
+
+        <button onclick="openCart()">
+
+            <span class="cart-nav-icon">
+                🛒
+
+                <small
+                    id="cartBadge"
+                    class="cart-badge hidden"
+                >
+                    0
+                </small>
+            </span>
+
+            Cart
+
+        </button>
+
+        <button onclick="openProfile()">
+            <span>♙</span>
+            You
+        </button>
+
+    </nav>
+
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='app.js') }}"
+></script>
+
+</body>
+</html>
